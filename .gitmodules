@@ -1,0 +1,9 @@
+[submodule "station-service"]
+	path = station-service
+	url = ../station-service
+[submodule "user-service"]
+	path = user-service
+	url = https://github.com/SparkFlow-TQS/user-service.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/SparkFlow-TQS/frontend.git

@@ -1,0 +1,8 @@
+fileignoreconfig:
+- filename: frontend
+  checksum: faab62836a2dd28568ad065209462c018ebf4763188196392a14bc1a0e476b13
+- filename: station-service
+  checksum: 348b0341d9f6ae699f6f20fccb36a45319fc95b49507114cbb05ee486434858a
+- filename: user-service
+  checksum: ab1505e2b33cb16441ab4b44dd3ce844b1503ab97a1ba491a6ba9853b82683e8
+version: "1.0"
