@@ -1,0 +1,10 @@
+version: '3.8'
+
+include:
+  - frontend/docker-compose.yml
+  - station-service/docker-compose.yml
+  - user-service/docker-compose.yml
+
+networks:
+  orchestrator-network:
+    driver: bridge 
