@@ -1,8 +1,4 @@
 include:
   - frontend/docker-compose.yml
   - station-service/docker-compose.yml
-  - user-service/docker-compose.yml
-
-networks:
-  sparkflow-network:
-    name: sparkflow-network 
+  - user-service/docker-compose.yml 
