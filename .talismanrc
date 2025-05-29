@@ -1,3 +1,4 @@
+threshold: medium
 fileignoreconfig:
 - filename: frontend
   checksum: faab62836a2dd28568ad065209462c018ebf4763188196392a14bc1a0e476b13

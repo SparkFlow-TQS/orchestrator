@@ -1,0 +1,31 @@
+name: Deploy with Password-based SSH
+
+on:
+  push:
+    branches:
+      - main
+      - SPARKFLOW-44-Setup-CD-Pipeline # for testing
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout repo (with submodules)
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install sshpass
+      run: sudo apt-get update && sudo apt-get install -y sshpass
+
+    - name: Deploy using sshpass
+      env:
+        SSHPASS: ${{ secrets.SSH_PASSWORD }}
+      run: |
+        sshpass -e ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          cd orchestrator
+          git pull --recurse-submodules
+          docker compose down
+          docker compose up -d
+        EOF
