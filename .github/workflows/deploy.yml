@@ -27,5 +27,5 @@ jobs:
           cd orchestrator
           git pull --recurse-submodules
           docker compose down
-          docker compose up -d
+          docker compose up --build -d
         EOF
