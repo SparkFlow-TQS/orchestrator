@@ -6,6 +6,12 @@ services:
       - "8082:8082"
     networks:
       - sparkflow-network
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "8082"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
 
   station-db:
     env_file:
